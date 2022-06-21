@@ -1,0 +1,118 @@
+:root {
+    --primary-color: #2bacc9;
+    --secondary-color: #ff3b3f;
+    --call-color: orange;
+    --dark-color: #6a6a6a;
+    --white-color: #f4f4f4;
+    --background-color: #efefef;
+}
+/* for project name */
+.logoFont{
+    font-family: 'Grandstander',
+    cursive;
+    color: rgb(85, 205, 85);
+}
+
+.logoBG {
+    background-color: var(--dark-color);
+}
+
+/* for attribution of image */
+.imageAttrib{
+    color: var(--dark-color);
+    opacity: 0.5;
+    font-size: x-small;
+}
+
+.hamburgerIcon{
+    color: var(--primary-color);
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--dark-color)
+}
+
+nav {
+    background-color: var(--dark-color);
+}
+.navbar a {
+    color: var(--white-color);
+}
+
+.navbar a:hover {
+    color: var(--secondary-color);
+}
+
+.navbar a span {
+    color: var(--secondary-color);
+}
+
+footer {
+    background-color: var(--dark-color);
+    color: var(--white-color);
+    padding-right: 3rem;
+}
+
+footer .social>a {
+    color: var(--white-color);
+    opacity: .75;
+}
+
+footer .social>a:hover {
+    opacity: 0.9;
+    color: var(--secondary-color);
+}
+
+.copyright {
+    color: var(--primary-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--primary-color);
+}
+
+main>.container {
+    padding: 60px 15px 0;
+    margin-bottom: 5rem;
+}
+
+.sticky-footer {
+    position: sticky;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.bsIcon {
+    color: #8411fa;
+}
+
+.jsIcon {
+    color: #efd81d;
+}
+
+.html5Icon {
+    color: #e56027;
+}
+
+.cssIcon {
+    color: #1a6db1;
+}
+
+.checklist>li i {
+    color: var(--call-color);
+}
+
+/* for prism */
+code[class*="language-"],
+pre[class*="language-"] {
+    white-space: pre-wrap;
+    word-break: break-all;
+    word-wrap: break-word;
+}
