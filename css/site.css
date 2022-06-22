@@ -8,13 +8,18 @@
 }
 /* for project name */
 .logoFont{
-    font-family: 'Grandstander',
+    font-family: 'Abril Fatface',
     cursive;
-    color: rgb(85, 205, 85);
+    color: #f9d266;
 }
 
 .logoBG {
     background-color: var(--dark-color);
+}
+
+.monthlyCard{
+    background-color: var(--dark-color);
+    color: var(--white-color);
 }
 
 /* for attribution of image */

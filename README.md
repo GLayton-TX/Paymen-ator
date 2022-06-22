@@ -1,2 +1,2 @@
-# MiniSiteTemplate
-Template for smaller projects/coding challenges
+# Paymen-ator
+Loan calculator using Amortization.

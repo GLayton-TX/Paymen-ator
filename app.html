@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name*: Coding Project by Greg Layton</title>
+    <title>Paymen-ator: Coding Project by Greg Layton</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,6 +14,9 @@
     <script src="https://kit.fontawesome.com/5db21ba9c6.js" crossorigin="anonymous"></script>
 
     <!-- google font goes here -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="/css/site.css">
 
@@ -30,7 +33,7 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="https://glayton.com/"><img src="/img/GL Logo Small Dark.svg"
                     alt="Greg Layton Logo" height="36" class="d-inline-block"></a>
-            <span class="logoFont ps-2 pe-4" style="font-size:40px;"> App Name*</span>
+            <span class="logoFont ps-2 pe-4" style="font-size:40px;"> Paymen-ator</span>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span>
@@ -58,6 +61,65 @@
     <main class="flex-shrink-0">
         <div class="container">
             <!--  -->
+            <div class="row row-cols-1 row-cols-lg-2">
+                <div class="col mt-5">
+                    <h4 class="border-bottom border-3">Enter in values below and press the "GO!" button to see the
+                        calculated payments.
+                    </h4>
+                    <div class="form-group p-2">
+                      <label for="financedAmmount">Amount to be financed</label>
+                      <input type="number"
+                        class="form-control" name="principalAmount" id="principalAmount" aria-describedby="helpId" placeholder="Enter a dollar value here:">
+                    </div>
+                    <div class="form-group p-2">
+                      <label for="loanTerm">Loan term length (months)</label>
+                      <input type="number"
+                        class="form-control" name="loanTerm" id="loanTerm" aria-describedby="helpId" placeholder="Enter loan term length in months:">
+                    </div>
+                    <div class="form-group p-2">
+                      <label for="interstRate">Interest rate</label>
+                      <input type="number"
+                        class="form-control" name="interestRate" id="interestRate" aria-describedby="helpId" placeholder="Enter loan Interest rate:">
+                    </div>
+                    <div class=" d-flex justify-content-end ">
+                        <button id="submitBtn" type="button" class="col col-2 m-3 btn btn-dark btn-lg">GO!</button>
+                        <button type="button" id="btnClear" class="col col-2 m-3 btn btn-danger">Clear Form</button>
+                    </div>
+                </div>
+                <div id="monthlyCard" class=" col mt-auto rounded-pill monthlyCard invisible show text-center p-5">
+                    <h2>Monthly Payment:  <span id="monthlyPayment" class="logoFont"></span></h2>
+                    <p class="lead pt-3">Amount financed:  <span id="amountFinanced" class="logoFont"></span></p>
+                    <p class="lead">Total interest:  <span id="totalInterest" class="logoFont"></span></p>
+                    <p class="lead">Total amount paid:  <span id="totalPaid" class="logoFont"></span></p>
+                </div>
+            </div>
+            <div id="amortTable" class="row mt-5 invisible show">
+                <h4 class="">Amortization schedule:</h4>
+                <table class="table table-responsive table-striped">
+                    <thead>
+                        <th>Month</th>
+                        <th>Payment</th>
+                        <th>Principal</th>
+                        <th>Interest</th>
+                        <th>Total Interest</th>
+                        <th>Balance</th>
+                    </thead>
+                    <tbody id="results">
+                        <!-- results go here -->
+                        <template id="loanTemplate">
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+                <button id="topBtn" class="btn btn-dark btn-lg" type="button">Back To Top</button>
+            </div>
         </div>
     </main>
         <footer class="footer mt-auto py-3 sticky-footer">
@@ -98,6 +160,15 @@
             integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
         </script>
         <script src="/js/site.js"></script>
+        <script>
+            document.getElementById("submitBtn").addEventListener("click", getValues);
+        </script>
+        <script>
+            document.getElementById("btnClear").addEventListener("click", clearForm);
+        </script>
+        <script>
+            document.getElementById("topBtn").addEventListener("click", topFunction);
+        </script>
 </body>
 
 </html>
